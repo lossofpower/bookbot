@@ -1,8 +1,13 @@
-with open("books/frankenstein.txt") as f:
-    file_contents = f.read().lower()
-    words = file_contents.split()
+def main():
+    book_path = "books/frankenstein.txt"
+    text = get_book_text(book_path)
+    returnLetters(text)
 
-def returnLetters():
+def get_book_text(path):
+    with open(path) as f:
+        return f.read().lower()
+
+def returnLetters(words):
     dict = {}
     list = []
     print("working")
@@ -22,4 +27,4 @@ def returnLetters():
         print(f"The {item[0]} character was found {item[1]} times")
 
 
-returnLetters()
+main()
