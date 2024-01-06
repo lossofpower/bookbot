@@ -4,6 +4,7 @@ with open("books/frankenstein.txt") as f:
 
 def returnLetters():
     dict = {}
+    list = []
     print("working")
     for word in words:
         for letter in word:
@@ -12,6 +13,13 @@ def returnLetters():
             else:
                 dict[letter] = 1
 
-    print(dict)
+    # print(dict.items())
+    for k,v in dict.items():
+        temp = [k,v]
+        if temp[0].isalpha():
+            list.append(temp)
+    for item in list:
+        print(f"The {item[0]} character was found {item[1]} times")
+
 
 returnLetters()
